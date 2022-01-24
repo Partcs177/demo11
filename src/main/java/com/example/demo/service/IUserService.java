@@ -9,13 +9,16 @@ import com.example.demo.UserRepository;
 import com.example.demo.entity.User;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 @Service
 public class IUserService {
 	@Autowired
 	private UserRepository userRepository;
-
+	@Transactional
 	public void saveUser(User user) {
 		userRepository.save(user);
+		//throw new IllegalArgumentException();
 	}
 
 	public Iterable<User> getUsers() {
@@ -27,7 +30,7 @@ public class IUserService {
 
 		return userRepository.findById(id);
 	}
-
+	@Transactional
 	public void deleteUser(Integer id) {
 		userRepository.deleteById(id);
 		

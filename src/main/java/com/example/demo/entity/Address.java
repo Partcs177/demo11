@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	Integer id;
+	Integer addressId;
 	String house;
 	String street;
 	public String getStreet() {

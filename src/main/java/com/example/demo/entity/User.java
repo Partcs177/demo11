@@ -21,7 +21,7 @@ public class User {
 	@Range(min=0)
 	private Integer age;
 	@OneToOne (cascade = CascadeType.ALL)
-	@JoinColumn(name = "address_id", referencedColumnName = "id")
+	@JoinColumn(name = "address_id", referencedColumnName = "addressId")
 	Address address;
 	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn(name = "company_id", referencedColumnName = "compId")
